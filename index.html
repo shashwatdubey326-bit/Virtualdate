@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Special Invite ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff0000, #ff4d6d);
+  color: white;
+}
+
+/* Floating Hearts */
+.heart {
+  position: absolute;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+.container {
+  margin-top: 120px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: white;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+button:hover {
+  background: pink;
+}
+
+.hidden {
+  display: none;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 25px;
+  width: 85%;
+  margin: auto;
+  margin-top: 80px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+.stickers {
+  font-size: 28px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts Script Generated -->
+<script>
+for(let i=0;i<25;i++){
+  let heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(3+Math.random()*3)+"s";
+  document.body.appendChild(heart);
+}
+</script>
+
+<!-- PASSWORD SCREEN -->
+<div class="container" id="loginBox">
+  <h2>🔒 Enter Secret Password 💕</h2>
+  <input type="password" id="password" placeholder="Enter password">
+  <br>
+  <button onclick="checkPassword()">Unlock 💖</button>
+</div>
+
+<!-- KISS SCREEN -->
+<div class="container hidden" id="kissBox">
+  <h2>Send me a cute kiss first 😘</h2>
+  <button onclick="openInvite()">💋 Tap to Kiss 💋</button>
+</div>
+
+<!-- INVITATION -->
+<div class="card hidden" id="inviteBox">
+  <div class="stickers">
+    🧸❤️🌹✨🐻💕🎀💋
+  </div>
+  <h1>Hey My Cutie 💖</h1>
+  <p style="font-size:20px;">
+    Can we have a <b>Virtual Date</b> at <br>
+    <b>6 PM today sharp?</b> ⏰❤️
+  </p>
+  <p>Be ready… your date is waiting 😌🌹</p>
+  <div class="stickers">
+    💕🌸🧸💋🌹🎈💖✨
+  </div>
+</div>
+
+<script>
+function checkPassword() {
+  var pass = document.getElementById("password").value;
+  if(pass === "ShaLovesAna") {
+    document.getElementById("loginBox").classList.add("hidden");
+    document.getElementById("kissBox").classList.remove("hidden");
+  } else {
+    alert("Wrong password baby 😜 Try again!");
+  }
+}
+
+function openInvite() {
+  document.getElementById("kissBox").classList.add("hidden");
+  document.getElementById("inviteBox").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
